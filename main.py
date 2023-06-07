@@ -1,17 +1,27 @@
-from datetime import date, time, datetime
-import pandas as pd
+from controler_data import operation_function
 
-df = pd.read_csv('names1.csv')
 
-title = input('Ведите заголовок(доп.инфо): \n')
-message = input('Ведите текст заметки: \n')
+def dialog_values():
+    incoming_vol = int(input(
+        'Выбереите:\n'
+        '1 - для создания записи \n'
+        '2 - для поиска записи \n'
+        '3 - для внесения изменений \n'
+        '4 - для выхода \n '
+        '******** \n'
+        '==>  '))
+    if incoming_vol is not None:
+        while incoming_vol < 4:
+            if incoming_vol == 1:
+                return incoming_vol
+            elif incoming_vol == 2:
+                return incoming_vol
+            elif incoming_vol == 3:
+                return incoming_vol
+            else:
+                print('Ошибка ввода!')
+    else:
+        print('Ошибка ввода!')
 
-number = len(df)+1
 
-df = pd.DataFrame({'Номер записи': number,
-                   'Тема': title,
-                   'Текст заметки': message,
-                   'Время записи': datetime.today()
-                   }, index=[0])
-df.to_csv('names1.csv', mode='a', sep=';', index=False, header=False)
-print(df)
+operation_function(dialog_values())
