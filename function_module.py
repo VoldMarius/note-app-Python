@@ -13,10 +13,12 @@ def record_data():
         'Время': datetime.today()
     }])
     df.to_csv('notes.csv', mode='a', header=False, index=False)
-
+    print('Заметка успешно сохранена')
 
 def find_data():
     changes_vol = input(
+        ''
+        ''
         'введите  Дату записи в формате -> YYYY-MM-DD :   ')
     print('*' * 10)
     df = pd.read_csv('notes.csv')

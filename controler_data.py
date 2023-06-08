@@ -20,4 +20,4 @@ def operation_function(data):
     elif data == 6:
         return show_notes_by_topic()
     else:
-        print('До встречи!')
+        print('Не верный ввод!')
