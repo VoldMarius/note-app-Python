@@ -1,4 +1,4 @@
-from function_module import record_data, find_data
+from function_module import record_data, find_data, change_data
 
 
 def operation_function(data):
@@ -9,6 +9,8 @@ def operation_function(data):
     elif data == 2:
         return find_data()
 
+    elif data == 3:
+        return change_data()
     # elif data == 3:
     #     changes_vol = input(
     #         'для изменения -  введите Фамилию или Имя или Отчество:')
